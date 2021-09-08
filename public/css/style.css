@@ -17,6 +17,7 @@ h1{
 }
 
 #redes, img{
-    width: 5vw;
-    height: 5vh;
+    display: inline;
+    width: 4vw;
+    height: 4vh;
 }

@@ -92,8 +92,8 @@ app.post("/editarLivro", (req, res) => {
     });
 });
 
-app.post("/pesquisa", (requisicao, resposta) => {
-    var livroPesquisa = requisicao.body.query;
+app.post("/pesquisa", (req, res) => {
+    var livroPesquisa = req.body.query;
     
   Livros.find(
         {$or: [
@@ -106,8 +106,7 @@ app.post("/pesquisa", (requisicao, resposta) => {
         if (err) {
             return resposta.status(500).send("Erro ao fazer a busca");
         }
-
-        resposta.render("livros", {livros_book: livro});
+        res.render("livros", {livros_book: livro});
 
     });
 });

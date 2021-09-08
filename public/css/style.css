@@ -16,3 +16,7 @@ h1{
     font-style: bold;
 }
 
+#redes, img{
+    width: 5vw;
+    height: 5vh;
+}

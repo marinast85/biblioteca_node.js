@@ -111,7 +111,16 @@ app.post("/pesquisa", (req, res) => {
     });
 });
 
-
+app.get ("/pesquisa", (req,res)=>{
+    var busca = req.query.pesquisa;
+    
+    console.log(busca);
+    Livros.find({$or:[{nome:busca}, {categoria:busca}, {autor:busca}]},(err, livros) =>{
+        if (err)
+            return res.status(500).send("Erro na busca");
+        res.render("livros", {livros_books: livro});
+    });
+});
 
 app.listen(port, () => {
     console.log("Servidor está rodando na porta " + port)

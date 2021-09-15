@@ -92,24 +92,6 @@ app.post("/editarLivro", (req, res) => {
     });
 });
 
-// app.post("/pesquisa", (req, res) => {
-//     var livroPesquisa = req.body.query;
-    
-//   Livros.find(
-//         {$or: [
-//         {nome: {$regex: new RegExp('.' + livroPesquisa + '.', 'i')}},
-//         {categoria: {$regex: new RegExp('.' + livroPesquisa + '.', 'i')}},
-//         {autor: {$regex: new RegExp('.' + livroPesquisa + '.', 'i')}},
-      
-//     ]}
-//         , (err, livro) => {
-//         if (err) {
-//             return resposta.status(500).send("Erro ao fazer a busca");
-//         }
-//         res.render("livros", {livros_book: livro});
-
-//     });
-// });
 
 app.get ("/pesquisa", (req,res)=>{
     var busca = req.query.pesquisa;
@@ -121,6 +103,11 @@ app.get ("/pesquisa", (req,res)=>{
         res.render("livros", {livros_books: livro});
     });
 });
+
+
+// atualiando usuario e senha ADM
+
+
 
 app.listen(port, () => {
     console.log("Servidor está rodando na porta " + port)
